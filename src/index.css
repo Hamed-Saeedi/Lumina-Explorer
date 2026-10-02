@@ -1,0 +1,890 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #05060a;
+  color: #f4f4f5;
+  overflow-x: hidden;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 75% 10%,
+      rgba(100, 80, 255, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 35%,
+      rgba(0, 180, 255, 0.07),
+      transparent 25%
+    ),
+    #05060a;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: min(1200px, calc(100% - 48px));
+  height: 82px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 20;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: #8b7cff;
+  margin-left: 3px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 34px;
+}
+
+.nav-links a {
+  color: #8d8f99;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.explore-btn {
+  border: 1px solid #272936;
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+
+  padding: 11px 18px;
+  border-radius: 30px;
+
+  transition: 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: white;
+  color: #05060a;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 650px;
+  margin: auto;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  width: 56%;
+  position: relative;
+  z-index: 5;
+}
+
+.eyebrow {
+  color: #858899;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(65px, 8vw, 112px);
+  line-height: 0.88;
+  letter-spacing: -7px;
+  font-weight: 600;
+}
+
+.hero h1 span {
+  background: linear-gradient(100deg, #ffffff, #8375ff, #63c7ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text {
+  max-width: 470px;
+  margin-top: 30px;
+
+  color: #858895;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 34px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 30px;
+  padding: 14px 23px;
+
+  transition: 0.3s ease;
+}
+
+.primary-btn {
+  background: white;
+  color: #05060a;
+  border: 1px solid white;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.15);
+}
+
+.secondary-btn {
+  color: white;
+  border: 1px solid #2b2d38;
+}
+
+.secondary-btn:hover {
+  border-color: #666875;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* =========================
+   HERO PLANET
+========================= */
+
+.planet-orbit {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+
+  width: 520px;
+  height: 520px;
+
+  transform: translateY(-50%);
+}
+
+.orbit {
+  position: absolute;
+  inset: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.orbit-one {
+  transform: rotate(20deg) scaleY(0.45);
+}
+
+.orbit-two {
+  transform: rotate(-35deg) scaleY(0.7);
+}
+
+.planet {
+  width: 310px;
+  height: 310px;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 30% 28%, #b9b3ff, transparent 8%),
+    radial-gradient(circle at 65% 65%, #392d9d, transparent 40%),
+    radial-gradient(circle at 35% 65%, #16104e, transparent 50%), #28206e;
+
+  box-shadow:
+    -35px -25px 70px rgba(113, 96, 255, 0.28),
+    inset -35px -30px 70px rgba(0, 0, 0, 0.65),
+    0 0 80px rgba(87, 69, 255, 0.15);
+}
+.planet::before,
+.planet::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.planet::before {
+  width: 75px;
+  height: 25px;
+  left: 55px;
+  top: 105px;
+  transform: rotate(-25deg);
+}
+
+.planet::after {
+  width: 40px;
+  height: 15px;
+  right: 55px;
+  bottom: 90px;
+  transform: rotate(20deg);
+}
+
+.planet-light {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25),
+    transparent 35%
+  );
+}
+
+.hero-card {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+
+  width: 245px;
+  padding: 18px;
+
+  display: flex;
+  gap: 15px;
+
+  background: rgba(13, 14, 21, 0.75);
+  border: 1px solid #252733;
+  backdrop-filter: blur(15px);
+
+  border-radius: 14px;
+}
+
+.hero-card > span {
+  color: #7568f5;
+  font-size: 12px;
+}
+
+.hero-card strong {
+  font-size: 13px;
+}
+
+.hero-card p {
+  color: #727582;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  width: min(1200px, calc(100% - 48px));
+  margin: 20px auto 130px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid #20222c;
+  border-bottom: 1px solid #20222c;
+}
+
+.stats div {
+  padding: 30px 20px;
+
+  border-right: 1px solid #20222c;
+}
+
+.stats div:last-child {
+  border-right: none;
+}
+
+.stats strong {
+  display: block;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+}
+
+.stats span {
+  display: block;
+  color: #71737e;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.planets-section,
+.missions-section {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto 150px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  margin-bottom: 55px;
+}
+
+.section-heading h2 {
+  max-width: 620px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.section-heading > p {
+  max-width: 300px;
+
+  color: #777985;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================
+   PLANETS
+========================= */
+
+.planet-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 30px;
+}
+
+.planet-menu {
+  border-top: 1px solid #252731;
+}
+
+.planet-item {
+  width: 100%;
+  min-height: 90px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #252731;
+
+  color: #70727d;
+  text-align: left;
+
+  padding: 0 18px;
+
+  transition: 0.3s ease;
+}
+
+.planet-item:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.planet-item.active {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.planet-name {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+}
+
+.planet-name small {
+  color: #656774;
+  font-size: 10px;
+}
+
+.mini-planet {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+
+  box-shadow: inset -5px -4px 8px rgba(0, 0, 0, 0.45);
+}
+
+.mini-planet.blue,
+.large-planet.blue {
+  background: radial-gradient(circle at 30% 30%, #7de1ff, #2041a5 65%, #0d123b);
+}
+
+.mini-planet.red,
+.large-planet.red {
+  background: radial-gradient(circle at 30% 30%, #ffb07c, #9d302a 65%, #43110d);
+}
+
+.mini-planet.orange,
+.large-planet.orange {
+  background: radial-gradient(circle at 30% 30%, #ffe0a1, #bd7028 60%, #49230e);
+}
+
+.planet-info {
+  min-height: 510px;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  padding: 50px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(80, 70, 255, 0.13),
+      transparent 35%
+    ),
+    #0a0b11;
+
+  border: 1px solid #20222d;
+  border-radius: 24px;
+}
+
+.large-planet {
+  min-width: 240px;
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  box-shadow:
+    inset -35px -25px 50px rgba(0, 0, 0, 0.5),
+    0 0 70px rgba(100, 90, 255, 0.12);
+}
+
+.large-planet::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+
+  left: 15%;
+  top: 15%;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(3px);
+}
+
+.planet-ring {
+  position: absolute;
+
+  width: 145%;
+  height: 35%;
+
+  left: -22%;
+  top: 34%;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  transform: rotate(-15deg);
+}
+
+.planet-details {
+  position: relative;
+  z-index: 2;
+}
+
+.planet-details h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 65px;
+  letter-spacing: -4px;
+  margin-bottom: 18px;
+}
+
+.planet-details > p:not(.eyebrow) {
+  color: #777985;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.planet-data {
+  display: flex;
+  gap: 40px;
+
+  margin-top: 35px;
+  padding-top: 22px;
+
+  border-top: 1px solid #252732;
+}
+
+.planet-data span {
+  display: block;
+  color: #686a76;
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+.planet-data strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+}
+
+/* =========================
+   MISSIONS
+========================= */
+
+.mission-list {
+  border-top: 1px solid #252731;
+}
+
+.mission-card {
+  min-height: 130px;
+
+  display: grid;
+  grid-template-columns: 60px 100px 1fr 40px;
+  align-items: center;
+  gap: 20px;
+
+  border-bottom: 1px solid #252731;
+
+  transition: 0.3s ease;
+}
+
+.mission-card:hover {
+  padding-left: 15px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mission-number {
+  color: #646672;
+  font-size: 11px;
+}
+
+.mission-year {
+  color: #8b7cff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 14px;
+}
+
+.mission-card h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 22px;
+}
+
+.mission-card p {
+  color: #6f717d;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.mission-arrow {
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+
+.mission-card:hover .mission-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  width: min(1200px, calc(100% - 48px));
+  min-height: 500px;
+
+  margin: 0 auto 100px;
+
+  padding: 90px 60px;
+
+  text-align: center;
+
+  border: 1px solid #22242f;
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(107, 91, 255, 0.2),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 30% 100%,
+      rgba(0, 180, 255, 0.08),
+      transparent 35%
+    ),
+    #090a10;
+}
+
+.cta h2 {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(45px, 7vw, 85px);
+  line-height: 0.95;
+
+  letter-spacing: -5px;
+
+  margin-bottom: 25px;
+}
+
+.cta h2 span {
+  background: linear-gradient(90deg, #ffffff, #8173ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cta > p:not(.eyebrow) {
+  color: #777985;
+  margin-bottom: 32px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  width: min(1200px, calc(100% - 48px));
+
+  margin: auto;
+  padding: 35px 0;
+
+  border-top: 1px solid #20222c;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p,
+footer > span {
+  color: #666873;
+  font-size: 11px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: 750px;
+  }
+
+  .hero-content {
+    width: 100%;
+    align-self: flex-start;
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 15vw, 90px);
+  }
+
+  .planet-orbit {
+    right: 50%;
+    top: 65%;
+    transform: translate(50%, -50%) scale(0.7);
+  }
+
+  .hero-card {
+    right: 10px;
+    bottom: 20px;
+  }
+
+  .planet-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .planet-info {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar,
+  .hero,
+  .stats,
+  .planets-section,
+  .missions-section,
+  .cta,
+  footer {
+    width: min(100% - 28px, 1200px);
+  }
+
+  .navbar {
+    height: 70px;
+  }
+
+  .explore-btn {
+    padding: 9px 13px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 690px;
+  }
+
+  .hero-content {
+    padding-top: 70px;
+  }
+
+  .hero h1 {
+    letter-spacing: -4px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+  .planet-orbit {
+    top: 66%;
+    transform: translate(50%, -50%) scale(0.52);
+  }
+
+  .hero-card {
+    width: 205px;
+    bottom: 5px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 90px;
+  }
+
+  .stats div:nth-child(2) {
+    border-right: none;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading h2 {
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+  }
+
+  .section-heading > p {
+    max-width: 100%;
+  }
+
+  .planet-info {
+    flex-direction: column;
+    text-align: center;
+    padding: 35px 20px;
+  }
+
+  .large-planet {
+    min-width: 180px;
+    width: 180px;
+    height: 180px;
+  }
+
+  .planet-details h3 {
+    font-size: 50px;
+    letter-spacing: -3px;
+  }
+
+  .planet-data {
+    justify-content: center;
+  }
+
+  .mission-card {
+    grid-template-columns: 35px 65px 1fr 20px;
+    gap: 8px;
+  }
+
+  .mission-card h3 {
+    font-size: 17px;
+  }
+
+  .mission-card p {
+    font-size: 11px;
+  }
+
+  .cta {
+    padding: 70px 20px;
+  }
+
+  .cta h2 {
+    letter-spacing: -3px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+}
